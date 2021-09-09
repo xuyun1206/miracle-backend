@@ -98,7 +98,10 @@ app.pushFCM = function (deviceToken, message, profile, env) {
     };
 
     fcm.send(message, function (err, response) {
-        logger.error(err);
+        if (err) logger.error('error= '+err);
+        else 
+        logger.info('res= ' + response);
+
     });
 }
 
