@@ -321,6 +321,7 @@ class AccountsController extends ApiAppController
             }
             $path = Configure::read("App.fullBaseUrl") . "/" . Configure::read("App.subDomain") . "/webroot/upload/profiles/" . $avatar;
             $this->authUser->avatar = $path;
+            $this->authUser->avatar_status = 1;
         }
         if (isset($dataPost["gender"]) && in_array($dataPost["gender"], array_keys(Account::getGenders()))) {
             $this->authUser->gender = $dataPost["gender"];
